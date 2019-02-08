@@ -1,25 +1,97 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp Basics", "Csharp Basics\Csharp Basics.csproj", "{DE6D2640-3A0F-4FAD-884A-1620E8E9F1FC}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE6D2640-3A0F-4FAD-884A-1620E8E9F1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE6D2640-3A0F-4FAD-884A-1620E8E9F1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE6D2640-3A0F-4FAD-884A-1620E8E9F1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE6D2640-3A0F-4FAD-884A-1620E8E9F1FC}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C77B4D24-5C04-49F6-AC71-569851C2ECA4}
-	EndGlobalSection
-EndGlobal
+using System;
+
+
+namespace Csharp_Basics
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const byte sample1 = 0x3A;
+            byte sample2 = 58;
+            int heartRate = 85;
+            double deposits = 135002796;
+            const float acceleration = 9.800F;
+            float mass = 14.6F;
+            double distance = 129.763001;
+            bool lost = true;
+            bool expensive = true;
+            int choice = 2;
+            const char integral = '\u222B';
+            const String greeting = "Hello";
+            String name = "Karen";
+
+            if (sample1 == sample2)
+            {
+                Console.WriteLine("The samples are equal.");
+            }
+            else
+            {
+                Console.WriteLine("The samples are not equal.");
+            }
+
+            if(heartRate>=40 && heartRate<=80)
+            {
+                Console.WriteLine("Heart rate is normal.");
+            }
+            else
+            {
+                Console.WriteLine("Heart rate is not normal.");
+            }
+
+            if (deposits >= 100000000)
+            {
+                Console.WriteLine("You are exceedingly wealthy.");
+            }
+            else
+            {
+                Console.WriteLine("Sorry you are so poor.");
+            }
+
+            float force;
+            force = mass * acceleration;
+            Console.WriteLine("force = {0}", force);
+
+            Console.WriteLine("{0} is the distance", distance);
+
+            if (lost && expensive)
+            {
+                Console.WriteLine("I an really sorry! I will get the manager.");
+            }
+            else if(lost && !expensive)
+            {
+                Console.WriteLine("Here is coupon for 10% off.");
+            }
+
+            switch(choice)
+            {
+                case 1:
+                    Console.WriteLine("You chose 1.");
+                    break;
+                case 2:
+                    Console.WriteLine("You chose 2.");
+                    break;
+                case 3:
+                    Console.WriteLine("You chose 3.");
+                    break;
+                default:
+                    Console.WriteLine("You made an unknown choice.");
+                    break;
+            }
+            
+            Console.WriteLine(integral+"is an integral.");
+            for(int i=5;i<=10;i++)
+            {
+                Console.WriteLine("i = {0}", i);
+            }
+            int age = 0;
+            while(age<6)
+            {
+                Console.WriteLine("age = {0}", age);
+                age++;
+            }
+            Console.WriteLine(greeting +"\t" +name);
+            Console.ReadKey();
+        }
+    }
+}
